@@ -1,125 +1,107 @@
-*, 
-*::before,
-*::after{
+*{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins',sans-serif;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-
-:root{
-    --white: #fff;
-    --black: #000;
-    --border-clr: rgba(255, 255, 255, 0.25);
-    --bg-clr: rgba(255, 255, 255, 0.15);
-}
-
-html{
-    font-size: 62.5%;
-}
-
-body{
-    font-size: 1.6rem;
-}
-
-/* wrapper */
-.wrapper{
-    width: 100vw;
-    min-height: 100vh;
-    color: var(--white);
-    background:linear-gradient(90deg, rgba(0, 255, 235, 1) 0%, rgba(7, 58, 187, 1) 100%);
-    display: grid;
-    place-items: center;
-    align-items: start;
-}
-
-.app-name{
-    font-size: 4.5rem;
-    align-self: center;
-    padding-bottom: 3rem;
-}
-
-/* game info */
-.game-info{
-    border: 1px solid var(--border-clr) ;
-    padding: 0.8rem 4.8rem;
-    border-radius: 1.6rem;
-    background-color: var(--bg-clr);
-    backdrop-filter: blur(7px);
-}
-
-/* game */
-.game{
-    width: 90%;
-    max-width: 32rem;
-    aspect-ratio: 1/1;
-    background-color: var(--bg-clr);
-    border: 1px solid var(--border-clr);
-    border-radius: 1.6rem;
-    backdrop-filter: blur(7px);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 3.2rem;
-}
-
-.box{
+.container{
     width: 100%;
-    aspect-ratio: 1 / 1;
-    display: grid;
-    place-items: center;
-    font-size: 4.8rem;
-    cursor: pointer;
-    /* position: relative; */
-    transition: all 150ms ease-in-out 0s;
+    min-height: 100vh;
+    background:linear-gradient(135deg,#151511,#1f288a);
+    padding: 10px;
 }
-
-.box-1, .box-2, .box-4, .box-5{
-    border-bottom: 2px solid var(--white);
-    border-right: 2px solid var(--white);
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius:10px;
 }
-
-.box-3, .box-6{
-    border-bottom: 2px solid var(--white);
+.todo-app h2{
+    color:#002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
-
-.box-7, .box-8{
-    border-right: 2px solid var(--white);
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
 }
-
-/* new game button */
-.new-game-btn{
-    color: var(--white);
-    background-color: var(--bg-clr);
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:#eed;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex:1;
+    border:none;
+    outline: none;
+    background:transparent;
+    padding:10px
+}
+button{
+    outline: none;
     border: none;
-    border: 1px solid var(--border-clr);
-    border-radius: 1.6rem;
-    padding: 0.8rem 3.2rem;   
-    backdrop-filter: blur(7px);
+    padding: 16px 50px;
+    background-color: #ee2354;
+    font-size: 16px;
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    /* border-image: initial; */
-    text-transform: capitalize;
-    transition: all 150ms ease-in-out;
+    color: #d1c9c9;
+    border-radius: 40px;
 }
-
-.new-game-btn.active{
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
+ul li{
+    list-style:none;
+    font-size: 17px;
+    padding: 12px  8px 12px 50px;
+    user-select: none;
+    cursor:pointer;
+    position: relative;
 }
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    border-radius: 50%;
+    width: 28px;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top:12px;
+    left: 8px;
 
-.win {
-    background-color: rgba(0, 255, 0, 0.3);
 }
-
-@media (max-width: 350px){
-    .box{
-        font-size: 4rem;
-    }
-
-    .app-name{
-        font-size: 3.5rem;
-    }
+ul li.checked{
+    color:#555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);   
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top:5px;
+    width: 40px;
+    height: 40px;
+    font-size:22px;
+    color:#555;
+    line-height: 40px;
+    text-align:center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #5a73a5;
+}
+#btn{
+    background-color: #240909;
+   display: block;
+   margin: auto;
+    justify-content: center;
+    padding: 20px;
+    
 }

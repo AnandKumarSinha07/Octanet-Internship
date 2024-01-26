@@ -2,47 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTacToe | Himanshu</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- favicon -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200&display=swap" rel="stylesheet">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- wrapper starts-->
-    <div class="wrapper">
-        <h1 class="app-name">Tic Tac Toe</h1>
-        <!-- game info -->
-        <div class="game-info">
-            <!-- Current Player - X -->
-        </div>
-
-        <!-- tic tac toe -->
-        <div class="game">
-            <div class="box box-1"></div>
-            <div class="box box-2"></div>
-            <div class="box box-3"></div>
-            <div class="box box-4"></div>
-            <div class="box box-5"></div>
-            <div class="box box-6"></div>
-            <div class="box box-7"></div>
-            <div class="box box-8"></div>
-            <div class="box box-9"></div>
-        </div>
-
-        <!-- New game button -->
-        <button class="new-game-btn">New Game</button>
-
+    <div class="container">
+         <div class="todo-app">
+            <h2>To-Do List <img src="images/icon.png" alt=""> </h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your text">
+                <button onclick="addTask()">Add</button>
+             </div>
+             <ul id="list-container">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+             </ul>
+         </div>
+        
     </div>
-    <!-- wrapper ends -->
-
-    <script src="js/script.js"></script>
+    <button id="btn">Get Location</button>
+    <h2 id="clock"></h2>
+    <script src="script.js"></script>
 </body>
+
 </html>
